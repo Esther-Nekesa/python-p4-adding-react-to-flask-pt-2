@@ -8,6 +8,7 @@ class Movie(db.Model, SerializerMixin):
 
     id = db.Column(db.Integer, primary_key=True)
     title = db.Column(db.String)
+    director = db.Column(db.String)
 
-    def __repr__(self):
-        return f'<Movie {self.title}>'
+    # Standard serialization rules
+    serialize_rules = ('-id',)
